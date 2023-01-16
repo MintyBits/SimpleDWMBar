@@ -4,7 +4,6 @@
 
 #include "modules/GetCurrentTime.h"
 #include "modules/GetCurrentBattery.h"
-//#include "modules/GetCurrentWifi.h"
 #include "modules/GetCurrentUser.h"
 
 #define DEFBUFLEN 64
@@ -23,12 +22,10 @@ int main() {
 		GetCurrentBatteryPercentage(CurrentBatteryPercentage, DEFBUFLEN);
 		GetCurrentUser(CurrentUser, DEFBUFLEN);
 
-		// Format a command using all the information we have detected.
-		// NOTE: You can add some cool utf-8 icons into this and have the coolest rice to put on r/unixporn
-		snprintf(DwmTopBuffer, 1024, "xsetroot -name '[Battery: %s%% | %s] [Time: %s] [User: %s]'", CurrentBatteryPercentage, CurrentBatteryStatus, CurrentTime, CurrentUser);
+		// Format a command using all the information we have got.
+		snprintf(DwmTopBuffer, sizeof(DwmTopBar), "xsetroot -name '[Battery: %s%% | %s] [Time: %s] [User: %s]'", CurrentBatteryPercentage, CurrentBatteryStatus, CurrentTime, CurrentUser);
 		system(DwmTopBuffer);
 		
-		// Don't remove this...
 		sleep(1);
 	}
 	return 0;
