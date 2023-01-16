@@ -1,2 +1,2 @@
 # SimpleDWMBar
-This is a simple dwm bar programmed in C that is static and non-modular.
+Just a simple dwm bar made for void linux that displays the battery percentage and status, current time, and current logged in user.
