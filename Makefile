@@ -1,4 +1,4 @@
-build: main.c modules/GetCurrentBattery.h modules/GetCurrentTime.h modules/GetCurrentWifi.h
+compile: main.c modules/GetCurrentBattery.h modules/GetCurrentTime.h modules/GetCurrentWifi.h
 	gcc main.c -o build/dwm-bar
 
 install: main.c
