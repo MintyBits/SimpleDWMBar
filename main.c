@@ -23,7 +23,7 @@ int main() {
 		GetCurrentUser(CurrentUser, DEFBUFLEN);
 
 		// Format a command using all the information we have got.
-		snprintf(DwmTopBuffer, sizeof(DwmTopBar), "xsetroot -name '[Battery: %s%% | %s] [Time: %s] [User: %s]'", CurrentBatteryPercentage, CurrentBatteryStatus, CurrentTime, CurrentUser);
+		snprintf(DwmTopBuffer, sizeof(DwmTopBuffer), "xsetroot -name '[Battery: %s%% | %s] [Time: %s] [User: %s]'", CurrentBatteryPercentage, CurrentBatteryStatus, CurrentTime, CurrentUser);
 		system(DwmTopBuffer);
 		
 		sleep(1);
